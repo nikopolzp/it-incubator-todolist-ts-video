@@ -21,10 +21,11 @@ export function Todolist(props: PropsType) {
  const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
   setNewTaskTitle(e.currentTarget.value) 
  };
-
+// Додаємо таску за допомогою "Enter"
  const onKeyUpHandler = (e: KeyboardEvent<HTMLInputElement>) => {
   if (e.key === 'Enter') {
     props.addTask(newTaskTitle);
+    // Вичищаємо рядок інпута
     setNewTaskTitle("");
  }
 }
@@ -50,7 +51,7 @@ const addTask = () => {
       <ul>
         {
           props.tasks.map(t => {
-            const onRemoveHandler = () =>() =>{props.removeTask(t.id)}
+            const onRemoveHandler = () =>{props.removeTask(t.id)}
             return <li key={t.id}>
             <input type="checkbox" checked={t.isDone} />
             <span>{t.title}</span>

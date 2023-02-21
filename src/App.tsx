@@ -15,12 +15,12 @@ let [tasks, setTasks] = useState([
   { id: v1(), title: "GraphQL", isDone: false },
 ]);
 console.log(tasks);
-
+// Видаляємо таску
 function removeTask(id: string){
- let filtredTasks = tasks.filter(t => t.id !== id);
- setTasks(filtredTasks);
+ let filteredTasks = tasks.filter(t => t.id !== id);
+ setTasks(filteredTasks);
 }
-
+// Додаємо таски
 function addTask(title: string) {
   let newTask = {
     id: v1(),
